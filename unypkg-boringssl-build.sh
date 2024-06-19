@@ -36,24 +36,24 @@ cd /uny/sources || exit
 
 pkgname="boringssl"
 pkggit="https://boringssl.googlesource.com/boringssl refs/heads/master"
-gitdepth="--depth=1"
+#gitdepth="--depth=1"
 
 ### Get version info from git remote
 # shellcheck disable=SC2086
-latest_head="$(git ls-remote --refs --sort="v:refname" $pkggit)"
-latest_ver="${latest_head:0:7}"
-latest_commit_id="$(echo "$latest_head" | cut --fields=1)"
+#latest_head="$(git ls-remote --refs --sort="v:refname" $pkggit)"
+latest_ver="9fc1c33"
+latest_commit_id="9fc1c33e9c21439ce5f87855a6591a9324e569fd"
 
 version_details
 
 # Release package no matter what:
 echo "newer" >release-"$pkgname"
 
-git_clone_source_repo
-
-#cd "$pkgname" || exit
-#./autogen.sh
-#cd /uny/sources || exit
+#git_clone_source_repo
+git clone "$pkggit"
+cd "$pkgname" || exit
+git checkout 9fc1c33e9c21439ce5f87855a6591a9324e569fd
+cd /uny/sources || exit
 
 archiving_source
 
