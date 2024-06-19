@@ -35,7 +35,7 @@ mkdir -pv /uny/sources
 cd /uny/sources || exit
 
 pkgname="boringssl"
-pkggit="https://boringssl.googlesource.com/boringssl refs/heads/master"
+pkggit="https://boringssl.googlesource.com/boringssl"
 #gitdepth="--depth=1"
 
 ### Get version info from git remote
