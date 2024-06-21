@@ -41,8 +41,8 @@ pkggit="https://boringssl.googlesource.com/boringssl"
 ### Get version info from git remote
 # shellcheck disable=SC2086
 #latest_head="$(git ls-remote --refs --sort="v:refname" $pkggit)"
-latest_ver="9fc1c33"
-latest_commit_id="9fc1c33e9c21439ce5f87855a6591a9324e569fd"
+latest_ver="5555991"
+latest_commit_id="5555991d3729d4231671214f0b9ba4858a5a8a81"
 
 version_details
 
@@ -52,7 +52,7 @@ echo "newer" >release-"$pkgname"
 #git_clone_source_repo
 git clone "$pkggit"
 cd "$pkgname" || exit
-git checkout 9fc1c33e9c21439ce5f87855a6591a9324e569fd
+git checkout 5555991d3729d4231671214f0b9ba4858a5a8a81
 cd /uny/sources || exit
 
 archiving_source
