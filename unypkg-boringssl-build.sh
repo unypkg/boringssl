@@ -87,14 +87,13 @@ cmake .. -DCMAKE_C_FLAGS="-fPIC" -DCMAKE_CXX_FLAGS="-fPIC" \
 ninja
 
 cd ssl
-ninja
-ninja install
+make -j4
 cd ../decrepit
-ninja
-ninja install
+make -j4
 cd ..
 
 ninja install
+cp decrepit/libdecrepit.a /uny/pkg/"$pkgname"/"$pkgver"/lib/
 
 cmake .. -DCMAKE_C_FLAGS="-fPIC" -DCMAKE_CXX_FLAGS="-fPIC" -DBUILD_SHARED_LIBS=1 \
     -DCMAKE_INSTALL_LIBDIR=/uny/pkg/"$pkgname"/"$pkgver"/lib \
