@@ -85,6 +85,13 @@ cmake .. -DCMAKE_C_FLAGS="-fPIC" -DCMAKE_CXX_FLAGS="-fPIC" \
     -DCMAKE_INSTALL_PREFIX=/uny/pkg/"$pkgname"/"$pkgver" -G Ninja ..
 
 ninja
+
+cd ssl
+ninja
+cd ../decrepit
+ninja
+cd ..
+
 ninja install
 
 cmake .. -DCMAKE_C_FLAGS="-fPIC" -DCMAKE_CXX_FLAGS="-fPIC" -DBUILD_SHARED_LIBS=1 \
