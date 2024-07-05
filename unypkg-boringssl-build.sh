@@ -97,10 +97,10 @@ cp decrepit/libdecrepit.a /uny/pkg/"$pkgname"/"$pkgver"/lib/
 
 cmake .. -DCMAKE_C_FLAGS="-fPIC" -DCMAKE_CXX_FLAGS="-fPIC" -DBUILD_SHARED_LIBS=1 \
     -DCMAKE_INSTALL_LIBDIR=/uny/pkg/"$pkgname"/"$pkgver"/lib \
-    -DCMAKE_INSTALL_PREFIX=/uny/pkg/"$pkgname"/"$pkgver" -G Ninja ..
+    -DCMAKE_INSTALL_PREFIX=/uny/pkg/"$pkgname"/"$pkgver"
 
-ninja
-ninja install
+make -j4
+make install
 
 ####################################################
 ### End of individual build script
