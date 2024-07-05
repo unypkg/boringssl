@@ -88,8 +88,10 @@ ninja
 
 cd ssl
 ninja
+ninja install
 cd ../decrepit
 ninja
+ninja install
 cd ..
 
 ninja install
