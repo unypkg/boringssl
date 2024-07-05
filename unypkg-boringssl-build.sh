@@ -80,6 +80,13 @@ unset LD_RUN_PATH
 mkdir build
 cd build || exit
 
+cmake .. -DCMAKE_C_FLAGS="-fPIC" -DCMAKE_CXX_FLAGS="-fPIC" \
+    -DCMAKE_INSTALL_LIBDIR=/uny/pkg/"$pkgname"/"$pkgver"/lib \
+    -DCMAKE_INSTALL_PREFIX=/uny/pkg/"$pkgname"/"$pkgver" -G Ninja ..
+
+ninja
+ninja install
+
 cmake .. -DCMAKE_C_FLAGS="-fPIC" -DCMAKE_CXX_FLAGS="-fPIC" -DBUILD_SHARED_LIBS=1 \
     -DCMAKE_INSTALL_LIBDIR=/uny/pkg/"$pkgname"/"$pkgver"/lib \
     -DCMAKE_INSTALL_PREFIX=/uny/pkg/"$pkgname"/"$pkgver" -G Ninja ..
