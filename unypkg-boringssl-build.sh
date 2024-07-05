@@ -82,7 +82,7 @@ cd build || exit
 
 cmake .. -DCMAKE_C_FLAGS="-fPIC" -DCMAKE_CXX_FLAGS="-fPIC" \
     -DCMAKE_INSTALL_LIBDIR=/uny/pkg/"$pkgname"/"$pkgver"/lib \
-    -DCMAKE_INSTALL_PREFIX=/uny/pkg/"$pkgname"/"$pkgver" -G Ninja ..
+    -DCMAKE_INSTALL_PREFIX=/uny/pkg/"$pkgname"/"$pkgver"
 
 make -j4
 
